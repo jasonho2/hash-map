@@ -21,3 +21,6 @@ puts test.get('hat')
 
 puts test.has?('frog')
 puts test.has?('bean')
+
+puts test.remove('kite')
+puts test.inspect

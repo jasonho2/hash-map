@@ -54,4 +54,18 @@ class HashMap
     return false
   end
 
+  def remove(key)
+    index = hash(key) % @capacity
+    raise IndexError if index.negative? || index >= @buckets.length
+    bucket = @buckets[index]
+
+    bucket.each_with_index do |pair, i|
+      if pair[0] == key
+        puts "[key, value] removed: #{pair}"
+        bucket.delete_at(i)
+        break
+      end
+    end
+  end
+
 end
