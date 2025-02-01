@@ -31,6 +31,21 @@ class HashMap
 
     bucket << [key, value]
     @count += 1
+
+    # if the capacity and load factor are exceeded, double capacity and rehash
+    if (@capacity * @loadfactor) < @count
+      old_buckets = @buckets
+      @capacity *= 2
+      @buckets = Array.new(@capacity) { [] }
+      @count = 0
+
+      old_buckets.each do |pair|
+        pair.each do |key, value|
+          set(key, value)
+        end
+      end
+    end
+    
   end
 
   def get(key)
