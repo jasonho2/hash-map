@@ -30,4 +30,16 @@ class HashMap
     bucket << [key, value]
   end
 
+  def get(key)
+    index = hash(key) % @capacity
+    raise IndexError if index.negative? || index >= @buckets.length
+    bucket = @buckets[index]
+
+    bucket.each do |pair|
+      return pair[1] if pair[0] == key
+    end
+
+    return nil
+  end
+
 end
