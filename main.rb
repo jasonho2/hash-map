@@ -18,3 +18,6 @@ test.set('lion', 'golden')
 puts test.inspect
 
 puts test.get('hat')
+
+puts test.has?('frog')
+puts test.has?('bean')

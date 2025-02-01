@@ -42,4 +42,16 @@ class HashMap
     return nil
   end
 
+  def has?(key)
+    index = hash(key) % @capacity
+    raise IndexError if index.negative? || index >= @buckets.length
+    bucket = @buckets[index]
+
+    bucket.each do |pair|
+      return true if pair[0] == key
+    end
+
+    return false
+  end
+
 end
