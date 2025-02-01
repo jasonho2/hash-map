@@ -5,6 +5,7 @@ class HashMap
     @loadfactor = loadfactor
     @capacity = capacity
     @buckets = Array.new(@capacity) { [] }
+    @count = 0
   end
 
   def hash(key)
@@ -28,6 +29,7 @@ class HashMap
     end
 
     bucket << [key, value]
+    @count += 1
   end
 
   def get(key)
@@ -63,9 +65,14 @@ class HashMap
       if pair[0] == key
         puts "[key, value] removed: #{pair}"
         bucket.delete_at(i)
+        @count -= 1
         break
       end
     end
+  end
+
+  def length
+    @count
   end
 
 end

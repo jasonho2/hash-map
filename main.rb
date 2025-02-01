@@ -24,3 +24,5 @@ puts test.has?('bean')
 
 puts test.remove('kite')
 puts test.inspect
+
+puts test.length
