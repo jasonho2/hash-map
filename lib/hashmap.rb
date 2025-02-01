@@ -80,4 +80,32 @@ class HashMap
     @count = 0
   end
 
+  def keys
+    keys = []
+
+    @buckets.each do |pair|
+      pair.each do |key, value|
+        if key
+          keys << key
+        end
+      end
+    end
+
+    p keys
+  end
+
+  def values
+    values = []
+
+    @buckets.each do |pair|
+      pair.each do |key, value|
+        if key
+          values << value
+        end
+      end
+    end
+
+    p values
+  end
+
 end

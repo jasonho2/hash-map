@@ -29,5 +29,9 @@ puts test.inspect
 
 puts test.length
 
-test.clear
-puts test.inspect
+# clear the HashMap and inspect
+#test.clear
+#puts test.inspect
+
+test.keys
+test.values
