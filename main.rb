@@ -2,7 +2,7 @@ require_relative 'lib/hashmap.rb'
 
 test = HashMap.new
 
-puts test.inspect
+#puts test.inspect
 
 test.set('apple', 'red')
 test.set('banana', 'yellow')
@@ -19,6 +19,14 @@ test.set('lion', 'golden')
 
 puts test.inspect
 
+test.set('grape', 'green')
+puts test.inspect
+puts test.length
+
+test.set('moon', 'silver')
+puts test.inspect
+puts test.length
+
 puts test.get('hat')
 
 puts test.has?('frog')
@@ -29,11 +37,11 @@ puts test.inspect
 
 puts test.length
 
-# clear the HashMap and inspect
-#test.clear
-#puts test.inspect
-
 test.keys
 test.values
 
 test.entries
+
+# clear the HashMap and inspect
+test.clear
+puts test.inspect
