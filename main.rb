@@ -2,6 +2,8 @@ require_relative 'lib/hashmap.rb'
 
 test = HashMap.new
 
+puts test.inspect
+
 test.set('apple', 'red')
 test.set('banana', 'yellow')
 test.set('carrot', 'orange')
@@ -26,3 +28,6 @@ puts test.remove('kite')
 puts test.inspect
 
 puts test.length
+
+test.clear
+puts test.inspect
