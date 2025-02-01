@@ -25,6 +25,7 @@ class HashMap
     bucket.each do |pair|
       if pair[0] == key
         pair[1] = value
+        return
       end
     end
 
