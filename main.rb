@@ -35,3 +35,5 @@ puts test.length
 
 test.keys
 test.values
+
+test.entries

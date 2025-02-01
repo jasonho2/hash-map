@@ -108,4 +108,18 @@ class HashMap
     p values
   end
 
+  def entries
+    entries = []
+
+    @buckets.each do |pair|
+      pair.each do |key, value|
+        if key
+          entries << [key, value]
+        end
+      end
+    end
+
+    p entries
+  end
+
 end
